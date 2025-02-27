@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solbenta</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Quicksand:wght@300..700&display=swap">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <meta name="theme-color" content="#2091F9">
+    <meta name="title" content="Solbenta">
+    <meta name="description" content="Expertos en consultoría e ingeniería, ofreciendo soluciones innovadoras y sostenibles para su empresa.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.solbenta.com">
+    <meta property="og:title" content="Solbenta">
+    <meta property="og:description" content="Expertos en consultoría e ingeniería, ofreciendo soluciones innovadoras y sostenibles para su empresa.">
+    <meta property="og:image" content="https://www.solbenta.com/images/solbenta.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.solbenta.com">
+    <meta property="twitter:title" content="Solbenta">
+    <meta property="twitter:description" content="Expertos en consultoría e ingeniería, ofreciendo soluciones innovadoras y sostenibles para su empresa.">
+    <meta property="twitter:image" content="https://www.solbenta.com/images/solbenta.jpg">
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .cta {
+            display: inline-block;
+            background-color: #ff6600;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta:hover {
+            background-color: #cc5200;
+            transform: scale(1.1);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #ff6600;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #cc5200;
+            transform: scale(1.05);
+        }
+
+        nav {
+            background-color: #f5f5f5;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav__top {
+            background-color: #ebaa76;
+            padding: 5px 20px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            color: white;
+            height: 30px;
+        }
+
+        .nav__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav__logo img {
+            width: 200px;
+            height: auto;
+        }
+
+        .nav__link {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            top: 10px; /* Ajustar este valor para mover hacia abajo */
+        }
+
+        .nav__links {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            transform: translateX(-300px);
+        }
+
+        .nav__submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            padding: 10px 0;
+            list-style: none;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transform: translateX(-260%);
+        }
+
+        .nav__items {
+            position: relative;
+        }
+
+        .nav__links {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav__links:hover {
+            color: #003d72;
+        }
+
+        .nav__items--dropdown {
+            position: relative;
+        }
+
+        .nav__items--dropdown:hover .nav__submenu {
+            display: block;
+        }
+
+        .nav__submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            padding: 10px 0;
+            list-style: none;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav__sublinks {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .nav__sublinks:hover {
+            background-color: #f5f5f5;
+        }
+        .nav__link * {
+            box-sizing: border-box;
+            transition: all .35s ease;
+        }
+
+        .nav__link li {
+            display: inline-block;
+            list-style: outside none none;
+            margin: .2em .5em;
+            padding: 0;
+        }
+
+        .nav__link a {
+            padding: .2em .4em;
+            color: rgba(0, 0, 0, .5);
+            position: relative;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav__link a::before,
+        .nav__link a::after {
+            content: '';
+            height: 14px;
+            width: 14px;
+            position: absolute;
+            transition: all .35s ease;
+            opacity: 0;
+        }
+
+        .nav__link a::before {
+            right: 0;
+            top: 0;
+            border-top: 3px solid #FF6600;
+            border-right: 3px solid #FF6600;
+            transform: translate(-100%, 50%);
+        }
+
+        .nav__link a::after {
+            left: 0;
+            bottom: 0;
+            border-bottom: 3px solid #FF6600;
+            border-left: 3px solid #FF6600;
+            transform: translate(100%, -50%);
+        }
+
+        .nav__link a:hover::before,
+        .nav__link a:hover::after {
+            transform: translate(0, 0);
+            opacity: 1;
+        }
+
+        .nav__link a:hover {
+            color: #FF6600;
+        }
+
+        .content-wrapper {
+            margin-top: 80px; /* Ajustar el margen superior según el tamaño del menú */
+        }
+
+        .section {
+            padding: 60px 20px;
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .section__title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        .section__title::after {
+            content: "";
+            display: block;
+            width: 300px; /* Ajustar el ancho aquí */
+            height: 5px; /* Ajustar la altura aquí */
+            background-color: #FF6600;
+            margin: 10px auto 0;
+            border-radius: 2.5px;
+        }
+
+        .section__content {
+            display: flex;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section__text {
+            flex: 1;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #555;
+            padding-right: 20px;
+        }
+
+        .section__text ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .section__text ul li {
+            margin-bottom: 10px;
+        }
+
+        .section__image {
+            flex: 1;
+            max-width: 500px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
+        #footer {
+            background: #777371;
+            color: #fff;
+            padding: 40px 0;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        .footer__container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .col-md-3 {
+            flex: 0 0 23%;
+            max-width: 23%;
+            margin: 10px 0;
+        }
+
+        .klbfooterwidget h4 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 20px; /* Aumentado */
+            font-weight: bold;
+        }
+
+        .titleline-footer {
+            width: 50px;
+            height: 3px;
+            background: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .textwidget p {
+            margin: 20px 0; /* Añadido para más espacio */
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            display: inline-block; /* Para que el padding se aplique correctamente */
+            margin-bottom: 10px; /* Añadido para espacio vertical entre enlaces */
+            padding: 5px 0; /* Añadido para más espacio dentro del enlace */
+        }
+
+        .footer-link:hover {
+            text-decoration: underline; /* Subrayado solo en hover */
+        }
+
+        .footer__social a {
+            margin: 0 10px;
+        }
+
+        .footer__social img {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s;
+        }
+
+        .footer__social a:hover img {
+            transform: scale(1.2);
+        }
+
+        .klbfooterwidget.widget_text + .klbfooterwidget.widget_text {
+            margin-top: 40px; /* Añadido más espacio entre "Nuestra Política" y "Artículos Destacados" */
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav__container">
+            <div class="nav__logo">
+                <a href="#"><img src="./images/logo.png" alt="Logo Solbenta"></a>
+            </div>
+            <ul class="nav__link">
+                <li class="nav__items"><a href="index.html" class="nav__links">Inicio</a></li>
+                <li class="nav__items"><a href="quienes-somos.html" class="nav__links">Acerca de</a></li>
+                <li class="nav__items"><a href="servicios.html" class="nav__links">Servicios</a></li>
+                <li class="nav__items"><a href="areas-de-actividad.html" class="nav__links">Áreas de Actividad</a></li>
+                <li class="nav__items"><a href="contact.html" class="nav__links">Contacto</a></li>
+                <li class="nav__items"><a href="empleo.html" class="nav__links">Empleo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="social-links">
+        <a href="https://www.linkedin.com" target="_blank"><img src="./images/linkedin.svg" alt="LinkedIn">LinkedIn</a>
+        <a href="https://www.twitter.com" target="_blank"><img src="./images/twitter.svg" alt="Twitter">Twitter</a>
+    </div>
+  
+    <div class="content-wrapper">
+        <section class="section">
+            <h2 class="section__title">Auditorías Técnicas</h2>
+            <div class="section__content">
+                <div class="section__text">
+                    <h3 style="text-align: left;">¿Qué son las Auditorías Técnicas?</h3>
+                    <p style="text-align: left;">Las auditorías técnicas son evaluaciones exhaustivas de las instalaciones y sistemas energéticos de un edificio o proyecto. Su objetivo es identificar oportunidades de mejora en términos de eficiencia energética, sostenibilidad y cumplimiento normativo.</p>
+                    <h3 style="text-align: left;">Los procesos incluyen:</h3>
+                    <ul style="text-align: left;">
+                        <li><strong>Revisión de Documentación:</strong> Análisis de planos, especificaciones técnicas y manuales operativos.</li>
+                        <li><strong>Inspección In Situ:</strong> Evaluación física de las instalaciones para detectar problemas o ineficiencias.</li>
+                        <li><strong>Mediciones y Pruebas:</strong> Uso de equipos especializados para medir parámetros energéticos y ambientales.</li>
+                        <li><strong>Informe de Resultados:</strong> Documentación detallada de hallazgos, recomendaciones y un plan de acción para mejorar la eficiencia energética y operativa.</li>
+                    </ul>
+                </div>
+                <img src="./images/servicios/auditorias.png" alt="Imagen de auditoría técnica" class="section__image">
+            </div>
+        </section>
+    </div>
+
+    <footer id="footer">
+        <div class="footer__container container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="klbfooterwidget widget_text">
+                        <h4>Quiénes Somos</h4>
+                        <div class="titleline-footer"></div>
+                        <div class="textwidget">
+                            <p>Solbenta ofrece soluciones integrales de ingeniería, destacándonos en innovación y economía para satisfacer las necesidades de nuestros clientes.</p>
+                            <p><img loading="lazy" decoding="async" class="alignnone wp-image-11793" src="https://www.proteyco.es/wp-content/uploads/2023/09/Certificado-sostenibilidad-proteyco-23-300x114.png" alt="Certificado sostenibilidad" width="187" height="71"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="widget_text klbfooterwidget widget_custom_html">
+                        <h4>Nuestra Política</h4>
+                        <div class="titleline-footer"></div>
+                        <div class="textwidget custom-html-widget">
+                            <a href="#" class="footer-link">Aviso Legal</a><br>
+                            <a href="#" class="footer-link">Política de Privacidad</a><br>
+                            <a href="#" class="footer-link">Política de Calidad</a><br>
+                            <a href="#" class="footer-link">Política de Cookies</a>
+                        </div>
+                    </div>
+                    <div class="klbfooterwidget widget_text">
+                        <div class="textwidget">
+                            <div style="max-width: 200px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="klbfooterwidget widget_text">
+                        <h4>Contacto</h4>
+                        <div class="titleline-footer"></div>
+                        <div class="textwidget">
+                            <p>Calle Gamonal 20 · Planta 2 - H · 28031 Madrid<br>
+                            Tel: +34 915 362 869<br>
+                            Fax: +34 91 417 06 71</p>
+                            <p><a href="mailto:solbenta@ingenierosconsultores.es" class="footer-link">solbenta@ingenierosconsultores.es</a></p>
+                            <p><a href="#" target="_blank" rel="noopener"><img decoding="async" style="max-height: 75px;" src="https://www.proteyco.es/wp-content/uploads/2021/02/9105038891_ES_CMYK_SIN-QR-Code.png" alt="logo certificación TÜV"></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="klbfooterwidget widget_text">
+                        <h4>Ubicación</h4>
+                        <div class="titleline-footer"></div>
+                        <div class="textwidget">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.5382391252127!2d-3.614686784659671!3d40.37443347936912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422848c8e42137%3A0x1d02127caa2a67c7!2sC.%20Gamonal%2C%2020%2C%2028031%20Madrid%2C%20Spain!5e0!3m2!1sen!2ses!4v1628504174367!5m2!1sen!2ses" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__copy container">
+            <div class="footer__social">
+            </div>
+            <p class="footer__copyright">&copy; 2024 Solbenta. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Ocultar/Mostrar el menú al desplazar
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('nav');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        // Menú hamburguesa
+        const hamburger = document.querySelector('.hamburger');
+        const navLink = document.querySelector('.nav__link');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLink.classList.toggle('active');
+        });
+
+        // Confirmación del formulario de newsletter
+        const form = document.querySelector('.footer__form');
+        const confirmationMessage = document.querySelector('.newsletter__confirmation');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Aquí se puede agregar la lógica para enviar el formulario
+            confirmationMessage.classList.add('active');
+            setTimeout(() => {
+                confirmationMessage.classList.remove('active');
+            }, 3000);
+        });
+
+        // Mantener la barra activa en la sección de contacto
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactLink = document.querySelector('.nav__links[href="contact.html"]');
+            contactLink.classList.add('active');
+        });
+    </script>
+</body>
+</html>

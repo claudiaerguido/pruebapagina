@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solbenta</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Quicksand:wght@300..700&display=swap">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <meta name="theme-color" content="#2091F9">
+    <meta name="title" content="Solbenta">
+    <meta name="description" content="Expertos en consultoría e ingeniería, ofreciendo soluciones innovadoras y sostenibles para su empresa.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.solbenta.com">
+    <meta property="og:title" content="Solbenta">
+    <meta property="og:description" content="Expertos en consultoría e ingeniería, ofreciendo soluciones innovadoras y sostenibles para su empresa.">
+    <meta property="og:image" content="https://www.solbenta.com/images/solbenta.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.solbenta.com">
+    <meta property="twitter:title" content="Solbenta">
+    <meta property="twitter:description" content="Expertos en consultoría e ingeniería, ofreciendo soluciones innovadoras y sostenibles para su empresa.">
+    <meta property="twitter:image" content="https://www.solbenta.com/images/solbenta.jpg">
+    <style>
+        /* Estilos personalizados */
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .cta {
+            display: inline-block;
+            background-color: #ff6600;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta:hover {
+            background-color: #cc5200;
+            transform: scale(1.1);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #ff6600;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s;
+            margin-top: 20px;
+        }
+
+        .button:hover {
+            background-color: #cc5200;
+            transform: scale(1.05);
+        }
+        nav {
+    background-color: #f5f5f5;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0; /* Añadir esto */
+}
+
+.nav__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0; /* Añadir esto */
+}
+
+.nav__link {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    top: 0; /* Cambiar esto a 0 */
+    margin: 0; /* Añadir esto */
+    padding: 0; /* Añadir esto */
+}
+
+.nav__items {
+    position: relative;
+    margin: 0; /* Añadir esto */
+    padding: 0; /* Añadir esto */
+}
+
+.nav__links {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    display: flex;
+    list-style: none;
+    margin: 0; /* Añadir esto */
+    padding: 0; /* Añadir esto */
+    transform: translateX(0); /* Cambiar esto a 0 */
+}
+
+.nav__links a {
+    padding: .2em .4em;
+    color: rgba(0, 0, 0, .5);
+    position: relative;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0; /* Añadir esto */
+}
+
+.hamburger {
+    display: none; /* Ocultar por ahora para pruebas */
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Mostrar solo en pantallas pequeñas */
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 1001;
+        cursor: pointer;
+    }
+    .nav__link {
+        display: none; /* Ocultar menú de enlaces por ahora */
+    }
+    .nav__link.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #f5f5f5;
+        padding: 10px 0;
+    }
+}
+
+
+        .nav__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0; /* Añadir esto */
+}
+
+
+        .nav__logo img {
+            width: 200px;
+            height: auto;
+        }
+
+        .nav__link {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    top: 0; /* Cambiar esto a 0 */
+    margin: 0; /* Añadir esto */
+    padding: 0; /* Añadir esto */
+}
+
+        .nav__links {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            transform: translateX(-300px);
+        }
+
+        .nav__submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            padding: 10px 0;
+            list-style: none;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transform: translateX(-260%);
+        }
+
+        .nav__items {
+    position: relative;
+    margin: 0; /* Añadir esto */
+    padding: 0; /* Añadir esto */
+}
+        .nav__links {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav__links:hover {
+            color: #003d72;
+        }
+
+        .nav__items--dropdown {
+            position: relative;
+        }
+
+        .nav__items--dropdown:hover .nav__submenu {
+            display: block;
+        }
+
+        .nav__submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            padding: 10px 0;
+            list-style: none;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav__sublinks {
+            color: black;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .nav__sublinks:hover {
+            background-color: #f5f5f5;
+        }
+        .nav__link * {
+            box-sizing: border-box;
+            transition: all .35s ease;
+        }
+
+        .nav__link li {
+            display: inline-block;
+            list-style: outside none none;
+            margin: .2em .5em;
+            padding: 0;
+        }
+
+        .nav__link a {
+            padding: .2em .4em;
+            color: rgba(0, 0, 0, .5);
+            position: relative;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .nav__link a::before,
+        .nav__link a::after {
+            content: '';
+            height: 14px;
+            width: 14px;
+            position: absolute;
+            transition: all .35s ease;
+            opacity: 0;
+        }
+
+        .nav__link a::before {
+            right: 0;
+            top: 0;
+            border-top: 3px solid #FF6600;
+            border-right: 3px solid #FF6600;
+            transform: translate(-100%, 50%);
+        }
+
+        .nav__link a::after {
+            left: 0;
+            bottom: 0;
+            border-bottom: 3px solid #FF6600;
+            border-left: 3px solid #FF6600;
+            transform: translate(100%, -50%);
+        }
+
+        .nav__link a:hover::before,
+        .nav__link a:hover::after {
+            transform: translate(0, 0);
+            opacity: 1;
+        }
+ .nav__link a:hover {
+            color: #FF6600;
+        }
+
+        .content-wrapper {
+            margin-top: 80px; /* Ajustar el margen superior según el tamaño del menú */
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: left;
+            padding: 60px 20px;
+        }
+
+        .about__image-container {
+            position: relative;
+            width: 45%;
+            height: auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .about__image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+            filter: grayscale(100%);
+        }
+
+        .about__image-container:hover .about__image {
+            transform: scale(1.1);
+            filter: grayscale(0);
+        }
+
+        .about__content {
+            width: 50%;
+        }
+
+        .about__overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s;
+            transform: translateY(100%);
+        }
+
+        .about__image-container:hover .about__overlay {
+            transform: translateY(0);
+        }
+
+        .section__title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .section__paragraph {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .positions {
+            padding: 60px 20px;
+        }
+
+        .positions__list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .position {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .position:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .position__title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .position__location, .position__description {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .cta--position {
+            margin-top: 10px;
+        }
+
+        .apply {
+            padding: 60px 20px;
+            background-color: #f0f8ff;
+        }
+
+        .apply__content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .apply__text {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .apply__form input, .apply__form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+
+        .apply__form button {
+            background-color: #dcb274;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .apply__form button:hover {
+            background-color: #c0a060;
+            transform: scale(1.1);
+        }
+
+        #footer {
+            background: #777371;
+            color: #fff;
+            padding: 40px 0;
+            font-family: 'Josefin Sans', sans-serif;
+        }
+
+        .footer__container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .col-md-3 {
+            flex: 0 0 23%;
+            max-width: 23%;
+            margin: 10px 0;
+        }
+
+        .klbfooterwidget h4 {
+            color: #fff;
+            font-size: 1.5rem;
+            margin-bottom: 20px; /* Aumentado */
+            font-weight: bold;
+        }
+
+        .titleline-footer {
+            width: 50px;
+            height: 3px;
+            background: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .textwidget p {
+            margin: 20px 0; /* Añadido para más espacio */
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            display: inline-block; /* Para que el padding se aplique correctamente */
+            margin-bottom: 10px; /* Añadido para espacio vertical entre enlaces */
+            padding: 5px 0; /* Añadido para más espacio dentro del enlace */
+        }
+
+        .footer-link:hover {
+            text-decoration: underline; /* Subrayado solo en hover */
+        }
+
+        .footer__social a {
+            margin: 0 10px;
+        }
+
+        .footer__social img {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s;
+        }
+
+        .footer__social a:hover img {
+            transform: scale(1.2);
+        }
+
+        .klbfooterwidget.widget_text + .klbfooterwidget.widget_text {
+            margin-top: 40px; /* Añadido más espacio entre "Nuestra Política" y "Artículos Destacados" */
+        }
+        
+       
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav__container">
+            <div class="nav__logo">
+                <a href="#"><img src="./images/logo.png" alt="Logo Solventa"></a>
+            </div>
+            <button class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <ul class="nav__link">
+                <li class="nav__items"><a href="index.html" class="nav__links">Inicio</a></li>
+                <li class="nav__items"><a href="quienes-somos.html" class="nav__links">Acerca de</a></li>
+                <li class="nav__items nav__items--dropdown">
+                    <a href="#" class="nav__links">Servicios</a>
+                    <ul class="nav__submenu">
+                        <li><a href="codigo-tecnico.html" class="nav__sublinks">Código Técnico</a></li>
+                        <li><a href="certificacion-energetica.html" class="nav__sublinks">Certificación Energética</a></li>
+                        <li><a href="sostenibilidad.html" class="nav__sublinks">Sostenibilidad</a></li>
+                        <li><a href="proyectos.html" class="nav__sublinks">Proyectos</a></li>
+                        <li><a href="obra.html" class="nav__sublinks">Obra</a></li>
+                        <li><a href="auditorias.html" class="nav__sublinks">Auditorías</a></li>
+                    </ul>
+                </li>
+                <li class="nav__items"><a href="areas-de-actividad.html" class="nav__links">Áreas de Actividad</a></li>
+                <li class="nav__items"><a href="contact.html" class="nav__links">Contacto</a></li>
+                <li class="nav__items"><a href="empleo.html" class="nav__links active">Empleo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Redes Sociales -->
+    <div class="social-links">
+        <a href="https://www.linkedin.com" target="_blank"><img src="./images/linkedin.svg" alt="LinkedIn">LinkedIn</a>
+        <a href="https://www.twitter.com" target="_blank"><img src="./images/twitter.svg" alt="Twitter">Twitter</a>
+    </div>
+
+   
+
+    <div class="content-wrapper">
+        <main>
+            <section id="about-us" class="container about">
+                <h2 class="section__title">¿Por Qué Trabajar con Nosotros?</h2>
+                <div class="about__content">
+                    <p class="section__paragraph">En Solventa Ingenieros Consultores, valoramos la creatividad, el compromiso y el trabajo en equipo. Ofrecemos un entorno de trabajo dinámico donde cada empleado puede crecer y desarrollarse profesionalmente.</p>
+                    <p class="section__paragraph">Nuestros proyectos impactan positivamente en la sociedad, y estamos comprometidos con la sostenibilidad y la innovación. Únete a nosotros y contribuye a un futuro mejor.</p>
+                </div>
+            </section>
+
+            <section id="open-positions" class="container positions">
+                <h2 class="section__title">Posiciones Abiertas</h2>
+                <div class="positions__list">
+                    <article class="position">
+                        <h3 class="position__title">Ingeniero de Proyectos</h3>
+                        <p class="position__location">Madrid, España</p>
+                        <p class="position__description">Buscamos un Ingeniero de Proyectos con experiencia en gestión de proyectos de construcción e infraestructura.</p>
+                        <a href="#apply" class="cta cta--position">Aplicar Ahora</a>
+                    </article>
+                    <article class="position">
+                        <h3 class="position__title">Consultor Energético</h3>
+                        <p class="position__location">Barcelona, España</p>
+                        <p class="position__description">Estamos en busca de un Consultor Energético con conocimiento en certificaciones y auditorías energéticas.</p>
+                        <a href="#apply" class="cta cta--position">Aplicar Ahora</a>
+                    </article>
+                    <article class="position">
+                        <h3 class="position__title">Gerente de Sostenibilidad</h3>
+                        <p class="position__location">Valencia, España</p>
+                        <p class="position__description">Se necesita un Gerente de Sostenibilidad para liderar proyectos de desarrollo sostenible y responsabilidad social.</p>
+                        <a href="#apply" class="cta cta--position">Aplicar Ahora</a>
+                    </article>
+                </div>
+            </section>
+
+            <section id="apply" class="container apply">
+                <h2 class="section__title">Aplicar a una Posición</h2>
+                <div class="apply__content">
+                    <p class="apply__text">Si estás interesado en alguna de nuestras posiciones abiertas, completa el siguiente formulario. Nos pondremos en contacto contigo a la brevedad.</p>
+                    <form action="https://formspree.io/f/mknkkrkj" method="POST" class="apply__form">
+                        <input type="text" name="name" placeholder="Nombre*" required>
+                        <input type="email" name="_replyto" placeholder="Email*" required>
+                        <input type="tel" name="phone" placeholder="Teléfono*" required>
+                        <input type="text" name="position" placeholder="Posición a la que aplica*" required>
+                        <textarea name="message" placeholder="Mensaje*" required></textarea>
+                        <div>
+                            <input type="checkbox" name="consent" required> He leído y acepto el <a href="#">Tratamiento de Datos</a>.
+                        </div>
+                        <button type="submit" class="cta">Enviar</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer id="footer">
+        <div class="footer__container container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="klbfooterwidget widget_text">
+                        <h4>Quiénes Somos</h4>
+                        <div class="titleline-footer"></div>
+                        <div class="textwidget">
+                            <p>Solbenta ofrece soluciones integrales de ingeniería, destacándonos en innovación y economía para satisfacer las necesidades de nuestros clientes.</p>
+                            <p><img loading="lazy" decoding="async" class="alignnone wp-image-11793" src="https://www.proteyco.es/wp-content/uploads/2023/09/Certificado-sostenibilidad-proteyco-23-300x114.png" alt="Certificado sostenibilidad" width="187" height="71"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="widget_text klbfooterwidget widget_custom_html">
+                        <h4>Nuestra Política</h4>
+                        <div class="titleline-footer"></div>
+                        <div class="textwidget custom-html-widget">
+                            <a href="#" class="footer-link">Aviso Legal</a><br>
+                            <a href="#" class="footer-link">Política de Privacidad</a><br>
+                            <a href="#" class="footer-link">Política de Calidad</a><br>
+                            <a href="#" class="footer-link">Política de Cookies</a>
+                        </div>
+                    </div>
+                    <div class="klbfooterwidget widget_text">
+                        <div class="textwidget">
+                            <div style="max-width: 200px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="klbfooterwidget widget_text">
+                        <h4>Contacto</h4>
+                        <div class="titleline-footer"></div>
+                        <div class="textwidget">
+                            <p>Calle Gamonal 20 · Planta 2 - H · 28031 Madrid<br>
+                            Tel: +34 915 362 869<br>
+                            Fax: +34 91 417 06 71</p>
+                            <p><a href="mailto:solbenta@ingenierosconsultores.es" class="footer-link">solbenta@ingenierosconsultores.es</a></p>
+                            <p><a href="#" target="_blank" rel="noopener"><img decoding="async" style="max-height: 75px;" src="https://www.proteyco.es/wp-content/uploads/2021/02/9105038891_ES_CMYK_SIN-QR-Code.png" alt="logo certificación TÜV"></a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="klbfooterwidget widget_text">
+                        <h4>Ubicación</h4>
+                        <div class="titleline-footer"></div>
+                        <div class="textwidget">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3103.5382391252127!2d-3.614686784659671!3d40.37443347936912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422848c8e42137%3A0x1d02127caa2a67c7!2sC.%20Gamonal%2C%2020%2C%2028031%20Madrid%2C%20Spain!5e0!3m2!1sen!2ses!4v1628504174367!5m2!1sen!2ses" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__copy container">
+            <div class="footer__social">
+            </div>
+            <p class="footer__copyright">&copy; 2024 Solbenta. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Cambiar la imagen de fondo del héroe automáticamente cada 5 segundos
+        const hero = document.querySelector('.hero');
+        const images = [
+            './images/bernabeu.obra.jpg',
+            './images/algarve.jpg',
+            './images/bbva.jpg',
+            './images/algarve.jpg',
+            './images/vallecas.jpg'
+        ];
+        let currentImageIndex = 0;
+
+        function changeHeroImage() {
+            hero.style.backgroundImage = `url(${images[currentImageIndex]})`;
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+        }
+
+        setInterval(changeHeroImage, 5000);
+        changeHeroImage();
+
+        // Ocultar/Mostrar el menú al desplazar
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('nav');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Desplazamiento hacia abajo
+                navbar.style.transform = 'translateY(-100%)';
+            } else {
+                // Desplazamiento hacia arriba
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScrollTop = scrollTop;
+        });
+
+        // Menú hamburguesa
+        const hamburger = document.querySelector('.hamburger');
+        const navLink = document.querySelector('.nav__link');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLink.classList.toggle('active');
+        });
+
+        // Confirmación del formulario de newsletter
+        const form = document.querySelector('.footer__form');
+        const confirmationMessage = document.querySelector('.newsletter__confirmation');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Aquí se puede agregar la lógica para enviar el formulario
+            confirmationMessage.classList.add('active');
+            setTimeout(() => {
+                confirmationMessage.classList.remove('active');
+            }, 3000);
+        });
+    </script>
+   
+</footer>
+</body>
+</html>
